@@ -1,0 +1,58 @@
+RewriteOptions inherit
+<IfModule mod_rewrite.c>
+Options +FollowSymlinks
+RewriteEngine On
+RewriteBase /
+ErrorDocument 404 /404.php
+RewriteRule ^p/(.*)/(.*)$ ?do=$1&id=$2 [QSA]
+RewriteRule ^p/(.*)$ ?do=$1 [QSA]
+
+RewriteRule ^rss.xml /dq-content/sitemap/rss.php [L]
+RewriteRule ^rss-post.xml /dq-content/sitemap/rss-post.php [L]
+RewriteRule ^rss-video.xml /dq-content/sitemap/rss-video.php [L]
+RewriteRule ^sitemap.xml /dq-content/sitemap/sitemap.php [L]
+RewriteRule ^sitemap-post.xml /dq-content/sitemap/sitemap-post.php [L]
+RewriteRule ^sitemap-video.xml /dq-content/sitemap/sitemap-video.php [L]
+RewriteRule ^sitemap-event.xml /dq-content/sitemap/sitemap-event.php [L]
+RewriteRule ^sitemap-category.xml /dq-content/sitemap/sitemap-category.php [L]
+RewriteRule ^sitemap-misc.xml /dq-content/sitemap/sitemap-misc.php [L]
+RewriteRule ^sitemap-(.*).xml /dq-content/sitemap/sitemap-other.php?type=$1 [L]
+
+RewriteRule ^rc ?do=redirect [QSA]
+RewriteRule ^news-sports ?get=news-sports [QSA]
+RewriteRule ^news/(.*)/([0-9]+)/([0-9]+)/(.*)(\/|)?$ ?get=news&tagz=$1&ids=$2&idn=$3&name=$4 [L]
+RewriteRule ^latest-sports ?get=latest-sports [QSA]
+RewriteRule ^latest-highschool-sports ?get=latest-highschool-sports [QSA]
+RewriteRule ^all-sports ?get=allsports [QSA]
+RewriteRule ^highschool-sports ?get=highschoolsports [QSA]
+RewriteRule ^highschool-states ?get=highschoolstates [QSA]
+RewriteRule ^highschools-sport-by-states ?get=highschool-sports-by-state [QSA]
+RewriteRule ^highschools/(.*)?$ ?get=highschools&sname=$1 [L]
+RewriteRule ^all-highlight-sports ?get=allhighlightsports [QSA]
+RewriteRule ^live-score ?get=live-score [QSA]
+RewriteRule ^events ?get=events [QSA]
+RewriteRule ^event/([0-9]+)/(.*)/(.*)?$ ?get=events_detail&id=$1&sname=$2&name=$3 [QSA]
+RewriteRule ^results ?get=results [QSA]
+RewriteRule ^result/([0-9]+)/(.*)/(.*)?$ ?get=results_detail&id=$1&sname=$2&name=$3 [QSA]
+RewriteRule ^sports/([0-9]+)/(.*)?$ ?get=sports&id=$1&sname=$2 [L]
+RewriteRule ^sport/([0-9]+)/(.*)?$ ?get=sports_detail&id=$1&sdname=$2 [L]
+RewriteRule ^player/([0-9]+)/(.*)$ ?get=player&id=$1&name=$2 [L]
+RewriteRule ^team/([0-9]+)/(.*)?$ ?get=team&id=$1&tname=$2 [L]
+RewriteRule ^watch/([0-9]+)/(.*)$ ?do=watch&id=$1&gname=$2 [L]
+RewriteRule ^watch/([0-9]+)(\/|)$ ?do=watch&id=$1 [L]
+RewriteRule ^highschool/(.*)/(.*)$ ?do=watch-highschool&name=$1&id=$2 [L]
+RewriteRule ^highlight/(.*)/(.*)$ ?do=highlight&id=$1&name=$2 [L]
+RewriteRule ^play/(.*)(\/|)$ ?do=play&name=$1 [L]
+RewriteRule ^search/(.*)$ ?do=search&s=$1 [QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(\/|) ?do=index [QSA]
+</IfModule>
+
+## STOP REFERRER SPAM
+RewriteCond %{HTTP_REFERER} success\-seo\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} semalt\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} best\-seo\-solution\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} best\-seo\-offer\.com [NC]
+RewriteRule .* - [F]

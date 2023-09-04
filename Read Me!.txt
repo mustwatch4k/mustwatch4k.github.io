@@ -1,0 +1,85 @@
+======================================
+
+
+Welcome to short installation
+
+1. Upload and Extraxt file on hosting
+
+2. Open Settings : /dq-admin/settings.php change with yours
+	"url"                   => 'https://domain.com',           /* without(tanpa) '/' in back (dibelakang) */
+	"weblogo"               => 'ALLSTAR GAME',
+	"webname"               => 'ALLSTAR GAME',
+	"webdescription"        => 'Watch sport full HD online free. Watch latests event games sport stream online. Over 9000 free streaming event sport',
+	"webkeywords"           => 'watch sports free online, watch sport online, watch sport free, sport online free, watch free sport online, free sport online, watch sport online free, free sport streaming, sport,full,online, stream,hd',
+	"email"                 => 'admin@domain.com',
+	"HistatsID"             => '',
+	"google_code"           => '',
+	"yandex_code"           => '',
+	"bing_code"             => '',
+	
+	"sub_id"                => "",              // name of your sub id
+    
+    "160x300"               => "true", // true/false if true then ads will be show
+    "320x50"                => "true", // true/false if true then ads will be show
+    "160x600"               => "true", // true/false if true then ads will be show
+    "300x250"               => "true", // true/false if true then ads will be show
+    "300x250_invideo"       => "true", // true/false if true then ads will be show
+    "vastads"               => "true", // true/false if true then ads will be show
+    "468x60"                => "true", // true/false if true then ads will be show
+    "728x90"                => "true", // true/false if true then ads will be show
+    "nativeads"             => "true", // true/false if true then ads will be show
+    "scriptheaderads"       => "true", // true/false if true then ads will be show, this for ads script to put on header
+    "scriptfooterads"       => "true", // true/false if true then ads will be show, this for ads script to put on footer or before </body>
+
+    "choose_player"         => "video_player",  // default_player    = POP UP Register show up after click play button/POP UP Register keluar setelah klik tombol play
+                                                // video_player      = Opening with video player first before POP UP Register show up / pembukaan dengan video player sebelum POP UP Register keluar
+    
+
+3. Custome Link
+    Call sport link that no sport data on site / Memanggil Olahraga yang tidak ada di situs
+    
+    example with without Image/contoh tanpa menggunakan gambar
+    https://domain.com/play/soccer/liverpool vs arsenal&sport=soccer  ==> if use without images sport images player will come as default images/ jika tidak menggunakan gambar, gambar player akan secara default
+
+    example with  image link/contoh dengan link gambar   
+    encode link image with base64 (you can use https://www.base64encode.org/ service or another free base64 online service)/ encode link gambar dengan base64encode (anda bisa menggunakan https://www.base64encode.org/ atau yang lainnya)
+    image link : https://www.thesportsdb.com/images/media/event/thumb/1lb7j61626519765.jpg
+    encode image : aHR0cHM6Ly93d3cudGhlc3BvcnRzZGIuY29tL2ltYWdlcy9tZWRpYS9ldmVudC90aHVtYi8xbGI3ajYxNjI2NTE5NzY1LmpwZw==
+    put :&sport=soccer&img=aHR0cHM6Ly9pMi1wcm9kLmZvb3RiYWxsLmxvbmRvbi9hcnNlbmFsLWZjL2FydGljbGUxNjc4MDQ0MC5lY2UvQUxURVJOQVRFUy9zMTIwMC8wX0xpdmVycG9vbC1BcnNlbmFsLnBuZw==
+    example/ contoh
+    https://domain.com/play/liverpool vs arsenal&sport=soccer&img=aHR0cHM6Ly93d3cudGhlc3BvcnRzZGIuY29tL2ltYWdlcy9tZWRpYS9ldmVudC90aHVtYi8xbGI3ajYxNjI2NTE5NzY1LmpwZw==
+    
+    
+4. Change offer Link : /dq-content/themes/movie/do/redirect.php change all //deqila.id with your offer link
+    if ( $countryCode == "US" ) {
+    $uri_affilate = '//deqila.id';
+    } elseif ( $countryCode == "AU" || $countryCode == "NL" || $countryCode == "FR" ) {
+        $uri_affilate = '//deqila.id';
+    } elseif ( $countryCode == "DE" || $countryCode == "ES" ) {
+        $uri_affilate = '//deqila.id';
+    } elseif ( $countryCode == "CA" ) {
+        $uri_affilate = '//deqila.id';
+    } else {
+        $uri_affilate = '//deqila.id';
+    }
+
+5. Open robots.txt Change Url domain :
+   - Sitemap: http://domain.com/sitemap.xml
+
+6. Insert keywords : /dq-content/keywords
+   - make new file with format 
+   sitemap-1.txt or sitemap-2.txt or sitemap-3.txt etc...
+   keyword format put line by line:
+    kw1
+    kw2
+    kw3
+    dst
+
+7. To Call Sitemap url is http://domain.com/sitemap.xml
+
+8. Done.
+
+
+========================================================
+
+
